@@ -1,0 +1,130 @@
+name: apico_annot_full
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  ########################
+  # 基础环境
+  ########################
+  - python=3.8
+  - pip
+  - perl
+  - perl-threaded
+  - openjdk
+  - git
+  - wget
+  - curl
+  - unzip
+  - gzip
+  - pigz
+  - parallel
+
+  ########################
+  # 结构注释主工具
+  ########################
+  - funannotate=1.8.15
+  - augustus=3.5.0
+  - busco
+  - maker
+  - braker
+  - evidencemodeler   # EvidenceModeler (EVM)，被 funannotate/Maker 使用
+  - gffread           # GTF/GFF 处理
+  - agat              # GFF3 注释整理和统计工具
+
+  ########################
+  # 重复序列分析
+  ########################
+  - repeatmasker
+  - repeatmodeler
+  - trf               # Tandem Repeats Finder
+  - rmblast           # RepeatMasker 用的 BLAST 变体
+
+  ########################
+  # 序列与比对工具（基因组/转录组）
+  ########################
+  - bwa
+  - bowtie2
+  - hisat2
+  - star
+  - minimap2
+  - gmap
+  - blat
+  - samtools
+  - bcftools
+  - bedtools
+  - bamtools
+  - picard
+
+  ########################
+  # RNA-seq / 转录组模块
+  ########################
+  - fastqc
+  - fastp
+  - trimmomatic
+  - cutadapt
+  - multiqc
+  - stringtie
+  - salmon
+  - kallisto
+
+  ########################
+  # 基因组质量评估
+  ########################
+  - quast
+  - mash
+  - assembly-stats
+
+  ########################
+  # 污染与物种组成（可选）
+  ########################
+  - kraken2
+  - bracken
+  - centrifuge
+  - krona
+  - blobtools
+
+  ########################
+  # 功能注释基础
+  ########################
+  - blast
+  - diamond
+  - hmmer
+  - eggnog-mapper
+  - kofamscan
+  - infernal          # ncRNA / Rfam 相关
+  - tRNAscan-SE
+  - rpsbproc          # CDD / RPS-BLAST 后处理
+  - emboss            # 各种序列小工具
+  - seqkit
+
+  ########################
+  # InterPro / Pfam 等整合注释
+  ########################
+  - interproscan      # 体积较大，首次安装和运行会比较慢
+  - pfam_scan         # Pfam HMM 扫描脚本依赖
+
+  ########################
+  # 信号肽 / 跨膜 / 分泌蛋白（顶复门常用）
+  ########################
+  - signalp            # 需要自行下载模型文件/遵守 license
+  - tmhmm              # 同上，运行前需准备官方模型数据
+
+  ########################
+  # 统计 & 可视化（可选，但写脚本很方便）
+  ########################
+  - r-base
+  - r-ggplot2
+  - r-dplyr
+  - r-data.table
+  - r-tidyverse
+  - r-optparse
+  - r-reshape2
+  - r-pheatmap
+
+  - pandas
+  - numpy
+  - scipy
+  - matplotlib
+  - seaborn
